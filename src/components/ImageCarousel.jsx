@@ -97,9 +97,9 @@ const ImageCarousel = () => {
     <div
       ref={containerRef}
       className="relative overflow-hidden rounded-[2.5rem] shadow-lg touch-pan-x
-                 w-full max-w-[calc(100vw-2rem)] h-48
-                 sm:w-80 sm:h-52
-                  lg:w-[500px] lg:h-[320px]"
+                 w-64 h-80
+                 sm:w-80 sm:h-96
+                 lg:w-96 lg:h-[32rem]"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onMouseEnter={onMouseEnter}

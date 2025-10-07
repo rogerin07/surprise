@@ -33,12 +33,16 @@ const LoveCounter = () => {
   }, []);
 
   return (
-    <div className="text-center text-gray-300 border-solid border-2 border-pink-400 p-4 rounded-lg bg-gray-900 bg-opacity-50 backdrop-blur-sm shadow-lg w-full max-w-md mx-auto">
-      <h2 className="text-lg sm:text-xl font-semibold mb-2">Eu te amo há:</h2>
-      <p className="text-base sm:text-lg">
-        {duration.months} meses, {duration.days} dias, {duration.hours} horas,{" "}
-        {duration.minutes} minutos e {duration.seconds} segundos
-      </p>
+    <div>
+      <h2 className="text-lg sm:text-xl font-semibold mb-2 text-center">
+        Eu te amo há:
+      </h2>
+      <div className="text-center text-gray-300 border-solid border-2 border-pink-400 p-4 rounded-lg bg-gray-900 bg-opacity-50 backdrop-blur-sm shadow-lg w-full max-w-md mx-auto">
+        <p className="text-base sm:text-lg">
+          {duration.months} meses, {duration.days} dias, {duration.hours} horas,{" "}
+          {duration.minutes} minutos e {duration.seconds} segundos
+        </p>
+      </div>
     </div>
   );
 };
