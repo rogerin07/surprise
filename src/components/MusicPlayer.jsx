@@ -68,18 +68,18 @@ const MusicPlayer = () => {
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="w-full max-w-sm bg-gray-800 bg-opacity-50 backdrop-blur-sm p-3 rounded-lg flex items-center gap-4 shadow-lg">
+    <div className="w-full max-w-sm bg-gray-800 bg-opacity-50 backdrop-blur-sm p-3 px-4 rounded-lg flex items-center gap-3 sm:gap-4 shadow-lg">
       {/* Lembre-se de corrigir o caminho se necessário */}
       <audio ref={audioRef} src="/audio/planos.mp3" loop />
 
       <img
         src="/images/capa-album.jpeg"
         alt="Capa do Álbum"
-        className="w-12 h-12 rounded"
+        className="w-10 h-10 sm:w-12 sm:h-12 rounded"
       />
 
       <div className="flex-grow">
-        <p className="font-bold text-sm">Planos</p>
+        <p className="font-bold text-sm truncate">Planos</p>
         <p className="text-xs text-gray-400">BK, Luccas Carlis, Arit</p>
 
         {/* Barra de Progresso */}
@@ -100,12 +100,12 @@ const MusicPlayer = () => {
       {/* Botão de Play/Pause */}
       <button
         onClick={togglePlayPause}
-        className="bg-white text-gray-900 p-2 rounded-full"
+        className="bg-white text-gray-900 p-2 rounded-full flex-shrink-0"
       >
         {isPlaying ? (
-          <Pause className="fill-black w-4 h-4 cursor-pointer" />
+          <Pause className="fill-black w-3 h-3 sm:w-4 sm:h-4 cursor-pointer" />
         ) : (
-          <Play className="fill-black w-4 h-4 cursor-pointer" />
+          <Play className="fill-black w-3 h-3 sm:w-4 sm:h-4 cursor-pointer" />
         )}
       </button>
     </div>

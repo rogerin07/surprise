@@ -1,6 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 
-const images = ["/sua-foto.jpg", "/foto2.jpg", "/foto3.jpg", "/foto4.jpg"];
+const images = [
+  "/images/img1.jpg",
+  "/images/img2.jpg",
+  "/images/img3.jpg",
+  "/images/img4.jpg",
+  "/images/img5.jpg",
+  "/images/img6.jpg",
+  "/images/img7.jpg",
+];
 
 const SWIPE_THRESHOLD = 50;
 const AUTO_PLAY_DELAY = 4000;
@@ -89,9 +97,9 @@ const ImageCarousel = () => {
     <div
       ref={containerRef}
       className="relative overflow-hidden rounded-[2.5rem] shadow-lg touch-pan-x
-                 w-72 h-48
-                 md:w-96 md:h-60
-                 lg:w-[500px] lg:h-[320px]"
+                 w-full max-w-[calc(100vw-2rem)] h-48
+                 sm:w-80 sm:h-52
+                  lg:w-[500px] lg:h-[320px]"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onMouseEnter={onMouseEnter}
@@ -112,31 +120,6 @@ const ImageCarousel = () => {
           />
         ))}
       </div>
-
-      {/* Botões */}
-      <button
-        onClick={() => {
-          prevImage();
-          pauseAutoPlay();
-          setTimeout(resumeAutoPlay, 3000);
-        }}
-        className="absolute top-1/2 left-2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 z-10"
-        aria-label="Imagem anterior"
-      >
-        &#8592;
-      </button>
-
-      <button
-        onClick={() => {
-          nextImage();
-          pauseAutoPlay();
-          setTimeout(resumeAutoPlay, 3000);
-        }}
-        className="absolute top-1/2 right-2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 z-10"
-        aria-label="Próxima imagem"
-      >
-        &#8594;
-      </button>
 
       {/* Indicadores */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
