@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Pause, Play } from "lucide-react"; // 1. Importe o ícone de Play
+import { Pause, Play } from "lucide-react"; 
+
+import song from "/audio/planos.mp3"; 
+import albumCover from "/images/capa-album.jpeg";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -29,7 +32,7 @@ const MusicPlayer = () => {
   useEffect(() => {
     const audio = audioRef.current;
 
-    // Inicia a música (autoplay)
+    
     audio
       .play()
       .then(() => {
@@ -69,11 +72,10 @@ const MusicPlayer = () => {
 
   return (
     <div className="w-full max-w-md bg-gray-800 bg-opacity-50 backdrop-blur-sm p-4 rounded-xl flex items-center gap-4 shadow-lg">
-      {/* Lembre-se de corrigir o caminho se necessário */}
-      <audio ref={audioRef} src="/audio/planos.mp3" loop />
+      <audio ref={audioRef} src={song} loop />
 
       <img
-        src="/images/capa-album.jpeg"
+        src={albumCover}
         alt="Capa do Álbum"
         className="w-16 h-16 rounded"
       />
